@@ -8,7 +8,7 @@ fn main() {
         .expect("Failed to read line");
 
     // Trim whitespace and parse the string to an i32 (32-bit integer)
-    let number: i32 = input_text
+    let number: i8 = input_text
         .trim()
         .parse()  // Converts the string to the specified type T
         .expect("Invalid input");           // Handle errors if the input isn't a valid number
