@@ -18,31 +18,28 @@ impl Student {
 }
 
 impl Rectangle {
-  fn new(length: u16,breadth: u16) -> Rectangle {
-    Rectangle{length:length, breadth:breadth}
+  // Initialize function
+  fn new(length: u16,breadth: u16) -> Self {
+    Self{length:length, breadth:breadth}
+  }
+
+  // change len function
+  fn rec_area(&self) -> u16 {
+  let result = self.length * self.breadth;
+  return result;
   }
 }
 
-fn change_len(rec: &mut Rectangle) {
-  rec.length += 1;
-  rec.breadth -= 1;
-}
+
 
 fn main() {
-  let mut rec = Rectangle {
-      length: 100,
-      breadth: 120,
-    };
-    let rec1 = Rectangle::new(100, 200);
-    let stu:Student = Student { name: "Shah Jabir".to_owned(), age: 22, pass: true };
-    let stu1:Student = Student::new("Ab.Rahim".to_owned(), 21, true);
-    println!("{:?}",stu1);
+    let rec = Rectangle::new(100, 120);
+    let stu:Student = Student::new("Ab.Rahim".to_owned(), 21, true);
     println!("{:?}",stu);
     println!("Student name: {}",stu.name);
     println!("Student age: {}",stu.age);
     println!("Student pass: {}",stu.pass);
-    println!("rec1: {:?}",rec1);
-    println!("rec length and breadth before fn {}, {}", rec.length, rec.breadth);
-    change_len(&mut rec);
-    println!("rec length and breadth after fn {}, {}", rec.length, rec.breadth);
+    println!("rec1: {:?}",rec);
+    let area:u16 = rec.rec_area();
+    println!("rec area: {}", area);
 }
