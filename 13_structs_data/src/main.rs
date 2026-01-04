@@ -28,12 +28,17 @@ impl Rectangle {
   let result = self.length * self.breadth;
   return result;
   }
+
+  fn change_value(&mut self) {
+    self.length += 1;
+    self.breadth -= 1;
+  }
 }
 
 
 
 fn main() {
-    let rec = Rectangle::new(100, 120);
+    let mut rec = Rectangle::new(100, 120);
     let stu:Student = Student::new("Ab.Rahim".to_owned(), 21, true);
     println!("{:?}",stu);
     println!("Student name: {}",stu.name);
@@ -42,4 +47,7 @@ fn main() {
     println!("rec1: {:?}",rec);
     let area:u16 = rec.rec_area();
     println!("rec area: {}", area);
+    println!("rec before fn: {:?}",rec);
+    rec.change_value();
+    println!("rec after fn: {:?}",rec);
 }
