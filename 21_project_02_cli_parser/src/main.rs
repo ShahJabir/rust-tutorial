@@ -5,8 +5,10 @@ use std::{fs, path::PathBuf};
 #[derive(Parser,  Debug)]
 #[command(about = "markdown to html")]
 struct Args {
+  /// Input Markdown file path
   #[arg(long, short)]
   input: PathBuf,
+  /// Onput HTML file path
   #[arg(long, short)]
   output: Option<PathBuf>
 }
