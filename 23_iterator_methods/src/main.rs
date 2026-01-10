@@ -12,4 +12,11 @@ fn main() {
     println!("{:?}",even_vec);
     let even_vec:Vec<i32> = vec.into_iter().filter(|x| x%2 == 0).collect();
     println!("{:?}",even_vec);
+
+    // reduce
+    let vec = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    match vec.into_iter().reduce(|accumulator, item| accumulator+item) {
+        Some(sum) => println!("The sum of vector elements is :{}", sum),
+        None => println!("None"),
+    }
 }
